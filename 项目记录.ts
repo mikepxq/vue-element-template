@@ -43,20 +43,6 @@
 4.antd layout 
  */
 
-/**commitlint
-build
-ci
-chore
-docs
-feat
-fix
-perf
-refactor
-revert
-style
-test
- */
-
 /**参照
 vite官网------------https://www.pipipi.net/vite/
 vue-eslint-parser---https://www.npmjs.com/package/vue-eslint-parser
