@@ -5,6 +5,7 @@
   <p>
     <button @click="getUserGetInfoByGet">test get</button>
     <button @click="getUserGetInfoByPost">test post</button>
+    <el-button>el button</el-button>
   </p>
   <p>
     <span>{{ getUsername }}</span>

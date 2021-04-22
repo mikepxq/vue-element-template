@@ -44,12 +44,21 @@
       1.npm i axios
       2.mock
         1.npm i mockjs
-        2.npm i -D vite-plugin-mock 
-4. 三方库 element
+        2.npm i -D vite-plugin-mock
+    9.plugin
+4. ui库 element
+  1.npm i element-plus
+  2.按需加载
+    1.npm i -D vite-plugin-style-import
+5.layout
+6.基础功能
+  1.权限管理
+7.特色功能
+  1.国际化
  */
 
 /**参照
 vite官网------------https://www.pipipi.net/vite/
 vue-eslint-parser---https://www.npmjs.com/package/vue-eslint-parser
-
+element-plus--------https://element-plus.org/#/zh-CN
  */

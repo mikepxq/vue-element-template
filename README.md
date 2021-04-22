@@ -28,8 +28,11 @@ npm run preview
 npm run lint:fix
 ```
 ## Demo
+###### 1.启动时间
 <!-- 临时地址 -->
 ![start time](./src/assets/npm-run-dev-demo.png)
+###### 2.element-plus 按需引入 el-button 组件，首页加载大小。
+![element-plus import button](./src/assets/vue-elementPlus-import.png)
 ## [commitlint](https://github.com/conventional-changelog/commitlint) 常见类型
 ```
   build

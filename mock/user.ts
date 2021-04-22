@@ -16,7 +16,7 @@ export default [
     url: "/api/user/get-user-info-by-post",
     method: "post",
     response: {
-      conde: 200,
+      code: 200,
       data: {
         username: "test post",
       },
