@@ -4,3 +4,5 @@ type ApiRes<T = any> = {
   data: T;
   message?: string;
 };
+/** 统一请求函数 */
+type ApiFn<Req = any, Res = ApiRes> = (data?: Req) => Res | Promise<Res>;

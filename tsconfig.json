@@ -15,5 +15,6 @@
       "@/*": ["src/*"]
     }
   },
+  "files": ["./src/typings/index.d.ts", "./src/shims-vue.d.ts", "./src/typings/vuex.d.ts"],
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

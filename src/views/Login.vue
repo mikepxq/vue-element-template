@@ -1,10 +1,10 @@
 <template>
-  <router-view></router-view>
+  <div>Login</div>
 </template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "App",
+  name: "Login",
 });
 </script>
+<style lang="sass"></style>

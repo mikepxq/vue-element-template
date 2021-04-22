@@ -35,12 +35,17 @@
     5.views
     //需要依赖的 数据结构 store mock 连通mock数据
     6.routes
-      1.npm i react-router-dom
-      2.npm i -D @types/react-router-dom
+      1.npm install vue-router@4
     7.store
+      1.npm i vuex@next
+      2.tsconfig
+        files:["./src/typings/vuex.d.ts"] (ts:可以直接引入import语法到全局)
     8.api
-      1.mock    
-4.antd layout 
+      1.npm i axios
+      2.mock
+        1.npm i mockjs
+        2.npm i -D vite-plugin-mock 
+4. 三方库 element
  */
 
 /**参照

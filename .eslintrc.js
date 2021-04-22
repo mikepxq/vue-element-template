@@ -26,7 +26,7 @@ module.exports = {
   plugins: ["vue", "@typescript-eslint", "prettier"],
   rules: {
     "prettier/prettier": ["error", prettier], //同步规则
-    "@typescript-eslint/explicit-module-boundary-types": "warn", //
+    "@typescript-eslint/explicit-module-boundary-types": "warn", //每个函数都要显式声明返回值
     "@typescript-eslint/no-unused-vars": "warn", //没用的值
     "@typescript-eslint/no-empty-interface": "warn", //ts空类型
     "@typescript-eslint/no-empty-function": "warn", //空函数
