@@ -1,5 +1,4 @@
 import axios from "axios";
-// !update
 const axiosInstance = axios.create({
   baseURL: "",
   timeout: 10000,
@@ -16,24 +15,25 @@ axiosInstance.interceptors.request.use(
 /**响应拦截 */
 axiosInstance.interceptors.response.use(
   (res) => {
+    //减少一层级
     return res.data;
   },
   (err) => {}
 );
 /**get 方式请求 */
 export const requestGet = (url: string, data?: any) => {
-  return axiosInstance({
+  return (axiosInstance({
     url,
     method: "get",
     params: data,
-  });
+  }) as unknown) as ApiRes | Promise<ApiRes>;
 };
 export const requestPost = (url: string, data: any) => {
-  return axiosInstance({
+  return (axiosInstance({
     url,
     method: "post",
     data,
-  });
+  }) as unknown) as ApiRes | Promise<ApiRes>;
 };
 
 /**参照：
