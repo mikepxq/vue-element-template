@@ -49,6 +49,19 @@ npm run lint:fix
   # demo
   feat: 统一开发环境 eslint prettier scss
 ```
+## 技术说明
+> 为什么单独样式文件
+```
+  1.为了后期皮肤等业务扩展，虽说不一定用的到，但好的架构还是需要的。
+  2.减少.vue 文件维护压力。
+
+```
+> css class 命名规则
+
+```
+  1.通用类，准守 EBM 规范
+  2.与业务相关的类，以下划线为间隔（业务_业务_业务_）。可以理解为命名空间。
+```
 ## Browsers support
 
 Modern browsers 

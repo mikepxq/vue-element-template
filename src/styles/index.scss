@@ -1,2 +1,12 @@
-#app {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//将高度传递到页面
+html,
+body,
+#app,
+.m-page {
+  height: 100%;
 }
