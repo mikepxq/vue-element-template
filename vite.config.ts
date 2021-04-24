@@ -3,11 +3,13 @@ import vue from "@vitejs/plugin-vue";
 import path from "path";
 import { viteMockServe } from "vite-plugin-mock";
 import styleImport from "vite-plugin-style-import";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 // https://vitejs.dev/config/
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return defineConfig({
     plugins: [
       vue(),
+      vueJsx(),
       viteMockServe({
         //
         mockPath: "mock",

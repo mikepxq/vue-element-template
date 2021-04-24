@@ -3,6 +3,7 @@
   1.npm init @vitejs/app my-vue-app --template vue-ts
   2.进入项目
     npm install
+  3.README.md
 2.统一环境
   1.npm i -D eslint
     1. ./node_modules/.bin/eslint --init
@@ -26,7 +27,8 @@
     vite.config.ts
   6.scss
     npm i -D sass
-  7.README.md
+  7.jsx
+    1.npm i -D @vitejs/plugin-vue-jsx
 3.搭建项目结构
     1.typings  
     2.assets
@@ -62,4 +64,5 @@
 vite官网------------https://www.pipipi.net/vite/
 vue-eslint-parser---https://www.npmjs.com/package/vue-eslint-parser
 element-plus--------https://element-plus.org/#/zh-CN
+vite jsx------------https://www.npmjs.com/package/@vitejs/plugin-vue-jsx
  */

@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "@/views/Home/index.vue";
+import Home from "@/views/Home";
 const routes = [
   {
     path: "/",
-    redirect: "/console",
+    redirect: "/home",
   },
   {
     path: "/home",
