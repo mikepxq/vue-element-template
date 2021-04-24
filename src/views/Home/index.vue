@@ -1,10 +1,11 @@
 <template>
-  <router-view class="m-page"></router-view>
+  <h1>Home deving</h1>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "App",
+  name: "Home",
+  components: {},
 });
 </script>

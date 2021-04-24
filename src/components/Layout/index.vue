@@ -1,10 +1,11 @@
 <template>
-  <router-view class="m-page"></router-view>
+  <div></div>
 </template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
+interface Props {}
 export default defineComponent({
-  name: "App",
+  name: "Layout",
 });
 </script>
+<style lang="sass"></style>

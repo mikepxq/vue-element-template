@@ -1,4 +1,5 @@
 <template>
+  <h1>Demo axios store mock</h1>
   <img alt="Vue logo" src="@/assets/logo.png" />
   <h1>test</h1>
   <div><router-link to="/login">to login</router-link></div>
@@ -15,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import "@/styles/index.scss";
+import "./index.scss";
 import { mapState } from "vuex";
 export default defineComponent({
   name: "App",
