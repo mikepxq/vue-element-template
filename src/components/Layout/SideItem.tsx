@@ -4,13 +4,17 @@ export default defineComponent({
   props: {
     iconName: { type: String as PropType<string> },
     title: { type: String as PropType<string> },
+    href: { type: String as PropType<string> },
+    class: { type: String as PropType<string> },
   },
   components: {},
   setup(props) {
     return () => (
       <>
-        <i class={`el-icon-${props.iconName}`}></i>
-        <span>{props.title}</span>
+        <router-link to={props.href} class={`${props.class}`}>
+          <i class={`el-icon-${props.iconName}`}></i>
+          <span>{props.title}</span>
+        </router-link>
       </>
     );
   },

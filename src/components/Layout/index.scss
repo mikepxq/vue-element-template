@@ -1,6 +1,17 @@
 .page_layout {
-  .m-menu__vertical:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
+  display: flex;
+
+  .m-menu__vertical {
+    //外部 为展开
+    &:not(.el-menu--collapse) {
+      width: 200px;
+      min-height: 400px;
+      height: 100%;
+    }
+  }
+  .m-side-item {
+    display: block;
+    height: 100%;
+    color: inherit;
   }
 }
