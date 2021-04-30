@@ -1,9 +1,9 @@
 import { computed, defineComponent, reactive, ref, watch } from "vue";
-import { ConsoleRoute } from "@/router/index";
+import { ConsoleRoute, getIsAuthWithUserAuthOnRoute } from "@/router/index";
 import { onBeforeRouteUpdate, RouteRecordRaw, useRoute } from "vue-router";
 import SideItem from "./SideItem";
 import "./index.scss";
-import _Divider from "element-plus/lib/el-divider";
+import { useStore } from "vuex";
 export default defineComponent({
   name: "Layout",
   props: {
@@ -13,13 +13,27 @@ export default defineComponent({
   setup(props, cxt) {
     const activePath = ref(useRoute().path);
     onBeforeRouteUpdate((to) => {
-      console.log("[to.path]", to.path);
+      // console.log("[to.path]", to.path);
       activePath.value = to.path;
     });
+    const {
+      getters: { userAuth },
+    } = useStore();
     /**获得 侧边栏列表 */
     const getSideMenuList = (routeList: RouteRecordRaw[]) => {
       return routeList.map((route) => {
-        if (route.children && route.children.length > 0) {
+        //有权限 并且没隐藏
+        //可以继续判断 没有组件 没有重定向
+        const isShow = getIsAuthWithUserAuthOnRoute(userAuth, route) && !route.meta?.hidden;
+        if (!isShow) return "";
+
+        const isHasChildren =
+          route.children &&
+          route.children.filter((cRoute) => {
+            return getIsAuthWithUserAuthOnRoute(userAuth, cRoute) && !cRoute.meta?.hidden;
+          }).length > 0;
+        //没有权限 或者 隐藏
+        if (isHasChildren) {
           return (
             <el-submenu
               index={route.path}
@@ -55,7 +69,7 @@ export default defineComponent({
     return () => (
       <div class="page_layout">
         <el-menu
-          default-active={activePath}
+          default-active={activePath.value} //避免警示
           active-text-color="#ffd04b"
           background-color="#545c64"
           text-color="#fff"

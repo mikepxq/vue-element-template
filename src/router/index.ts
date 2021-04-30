@@ -12,7 +12,12 @@ export const ConsoleRoute: RouteRecordRaw = {
     {
       path: "/console/dashboard",
       component: () => import("@/views/Dashboard/index"),
-      meta: { icon: "location", title: "Dashboard" },
+      meta: {
+        icon: "location",
+        title: "Dashboard",
+        // auths: ["superAdmin0"], //test
+        //  hidden: true
+      },
     },
     {
       path: "/console/table",
@@ -34,13 +39,23 @@ export const ConsoleRoute: RouteRecordRaw = {
           path: "/console/nested/nested-1",
           // name: "Console",
           component: () => import("@/views/Nested/Nested-1/index"),
-          meta: { icon: "location", title: "Nested-1" },
+          meta: {
+            icon: "location",
+            title: "Nested-1",
+            //  hidden: true
+            // auths: ["superAdmin0"], //test
+          },
         },
         {
           path: "/console/nested/nested-2",
           // name: "Console",
           component: () => import("@/views/Nested/Nested-2/index"),
-          meta: { icon: "location", title: "Nested-2" },
+          meta: {
+            icon: "location",
+            title: "Nested-2",
+            // hidden: true
+            // auths: ["superAdmin0"], //test
+          },
           children: [
             {
               path: "/console/nested/nested-2/nested-2-1",
