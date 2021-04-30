@@ -1,9 +1,12 @@
 import { reqUserGetInfoByGet, reqUserGetInfoByPost } from "@/apis/index";
+import { getToken } from "@/utils";
 export default {
   namespaced: true,
   state() {
     return {
       username: "",
+      token: getToken(),
+      userAuth: "superAdmin",
       getUsername: "",
       postUsername: "",
     };

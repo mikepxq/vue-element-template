@@ -48,16 +48,28 @@
         1.npm i mockjs
         2.npm i -D vite-plugin-mock
     9.plugin
+    //补上
+    10.utils
+    11.settings
 4. ui库 element
   1.npm i element-plus
   2.按需加载
     1.npm i -D vite-plugin-style-import
 5.layout
-
+  1.components/layout
 6.基础功能
   1.权限管理
+    1.utils getToken
+    2.store user.ts token
+    3.routes auths
+    4.auth.ts
+    5.页面加载进度 nprogress
+      npm i nprogress
+      npm i -D @types/nprogress
+
 7.特色功能
   1.国际化
+  2.
  */
 
 /**参照

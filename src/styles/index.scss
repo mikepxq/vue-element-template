@@ -1,3 +1,4 @@
+//type
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +8,21 @@ a {
   color: #888;
   text-decoration: none;
 }
-//将高度传递到页面
+//common 组件类
+.scroll {
+  &::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(255, 255, 240, 0.192);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 5px;
+    background: rgb(14, 6, 6);
+  }
+}
+
+//app 全局 将高度传递到页面
 html,
 body,
 #app,

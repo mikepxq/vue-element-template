@@ -1,10 +1,13 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteLocationNormalized, RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home";
 export const ConsoleRoute: RouteRecordRaw = {
   path: "/console",
   name: "Console",
   component: () => import("@/components/Layout"),
   props: (route) => route,
+  meta: {
+    auths: ["superAdmin"],
+  },
   children: [
     {
       path: "/console/dashboard",
@@ -71,9 +74,47 @@ const routes = [
     path: "/login",
     component: () => import("@/views/Login.vue"),
   },
+  {
+    path: "/404",
+    component: () => import("@/views/404"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/404",
+  },
 ];
 
 export default createRouter({
   history: createWebHashHistory(),
   routes,
 });
+
+/**
+ * 获得，当前用户，访问当前路由是否有权限
+ * @param userAuth
+ * @param route
+ * @returns
+ */
+export const getIsAuthWithUserAuthOnRoute = (userAuth: string, route: RouteRecordRaw) => {
+  //没有配置权限
+  if (!route.meta) return true;
+  if (!route.meta.auths || route.meta.auths.length < 1) return true;
+  // * 用户登录后，任何权限都可以
+  if (route.meta.auths.includes("*")) return true;
+  //用户拥有权限
+  if (route.meta.auths.includes(userAuth)) return true;
+  return false;
+};
+/**
+ * 获得，根据用户权限是否可以访问一个路由，必须父级路由都通过
+ * @param userAuth
+ * @param to
+ */
+export const getIsAuthWithUserAuthPassRoutes = (userAuth: string, to: RouteLocationNormalized) => {
+  return (
+    to.matched.filter((route) => {
+      return getIsAuthWithUserAuthOnRoute(userAuth, route);
+      //从父级循环下来，必须全部通过
+    }).length >= to.matched.length
+  );
+};
