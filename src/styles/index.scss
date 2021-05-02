@@ -9,7 +9,7 @@ a {
   text-decoration: none;
 }
 //common 组件类
-.scroll {
+.m-scroll {
   &::-webkit-scrollbar {
     width: 10px;
     background: rgba(255, 255, 240, 0.192);
@@ -18,7 +18,7 @@ a {
   &::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 5px;
-    background: rgb(14, 6, 6);
+    background: #303133;
   }
 }
 

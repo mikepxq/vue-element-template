@@ -1,6 +1,7 @@
 {
   "name": "my-vue-app",
   "version": "0.0.0",
+  "description": "这是一个ts+vite2+vue3有权限管理等基础功能的后台模板",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",

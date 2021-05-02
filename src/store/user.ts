@@ -1,5 +1,6 @@
 import { reqUserGetInfoByGet, reqUserGetInfoByPost } from "@/apis/index";
-import { getToken } from "@/utils";
+import { getToken, setToken } from "@/utils";
+// setToken("0");
 export default {
   namespaced: true,
   state() {

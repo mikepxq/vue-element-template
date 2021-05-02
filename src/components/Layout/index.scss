@@ -2,11 +2,12 @@
   display: flex;
 
   .m-menu__vertical {
+    height: 100%;
+    overflow-y: auto;
+
     //外部 为展开
     &:not(.el-menu--collapse) {
-      width: 200px;
-      min-height: 400px;
-      height: 100%;
+      min-width: 200px;
     }
   }
   .m-side-item {
