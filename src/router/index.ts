@@ -3,6 +3,7 @@ import Home from "@/views/Home";
 export const ConsoleRoute: RouteRecordRaw = {
   path: "/console",
   name: "Console",
+  redirect: "/console/dashboard",
   component: () => import("@/components/Layout"),
   props: (route) => route,
   meta: {
