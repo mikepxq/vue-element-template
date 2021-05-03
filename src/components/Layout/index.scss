@@ -1,18 +1,23 @@
 .page_layout {
   display: flex;
 
-  .m-menu__vertical {
+  .m-side {
     height: 100%;
     overflow-y: auto;
-
     //外部 为展开
     &:not(.el-menu--collapse) {
       min-width: 200px;
     }
+    .m-side-item {
+      display: block;
+      height: 100%;
+      color: inherit;
+    }
   }
-  .m-side-item {
-    display: block;
-    height: 100%;
-    color: inherit;
+  .m-main {
+    flex-grow: 2;
+    > * {
+      border: 1px solid #ddd;
+    }
   }
 }

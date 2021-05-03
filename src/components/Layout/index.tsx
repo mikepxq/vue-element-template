@@ -1,6 +1,9 @@
-import { defineComponent } from "vue";
+import vue, { defineComponent, ref, resolveComponent, h, Suspense, resolveDynamicComponent } from "vue";
 import Side from "./Side";
+
 import "./index.scss";
+import { onBeforeRouteUpdate, useRoute } from "vue-router";
+import Main from "./Main.vue";
 export default defineComponent({
   name: "Layout",
   props: {
@@ -8,13 +11,17 @@ export default defineComponent({
   },
   components: {},
   setup(props, cxt) {
+    const activePath = ref(useRoute().path);
+    onBeforeRouteUpdate((to) => {
+      // console.log("[to.path]", to.path);
+      activePath.value = to.path;
+    });
     return () => (
       <div class="page_layout">
-        <Side class="m-menu__vertical m-scroll"></Side>
-        <div>
-          {/* header 折叠按钮 面包屑 */}
-          <router-view key="/console/nested/nested-1"></router-view>
-        </div>
+        <Side class=" m-scroll m-side"></Side>
+        {/* header 折叠按钮 面包屑 */}
+        {/* 首次直接加载效果 */}
+        <Main />
       </div>
     );
   },
