@@ -2,6 +2,7 @@ import { ConsoleRoute, getIsAuthWithUserAuthOnRoute } from "@/router";
 import { defineComponent, ref } from "vue";
 import { onBeforeRouteUpdate, RouteRecordRaw, useRoute } from "vue-router";
 import { useStore } from "vuex";
+import { ElMenuItem, ElSubmenu, ElMenu } from "element-plus";
 import SideItem from "./SideItem";
 export default defineComponent({
   name: "App",
@@ -34,7 +35,7 @@ export default defineComponent({
         //没有权限 或者 隐藏
         if (isHasChildren) {
           return (
-            <el-submenu
+            <ElSubmenu
               index={route.path}
               v-slots={{
                 title: () => (
@@ -48,17 +49,17 @@ export default defineComponent({
                 ),
               }}>
               {route.children && getSideMenuList(route.children)}
-            </el-submenu>
+            </ElSubmenu>
           );
         } else {
           return (
-            <el-menu-item index={route.path}>
+            <ElMenuItem index={route.path}>
               <SideItem
                 class="m-side-item"
                 iconName={route.meta && route.meta.icon}
                 title={route.meta && route.meta.title}
                 href={route.path}></SideItem>
-            </el-menu-item>
+            </ElMenuItem>
           );
         }
       });
@@ -66,14 +67,14 @@ export default defineComponent({
     //
 
     return () => (
-      <el-menu
+      <ElMenu
         default-active={activePath.value} //避免警示
         active-text-color="#ffd04b"
         background-color="#545c64"
         text-color="#fff"
         class="m-menu__vertical m-scroll">
         {ConsoleRoute.children && getSideMenuList(ConsoleRoute.children)}
-      </el-menu>
+      </ElMenu>
     );
   },
 });

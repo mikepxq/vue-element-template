@@ -37,6 +37,7 @@
     5.views
     //需要依赖的 数据结构 store mock 连通mock数据
     6.routes
+      //初始路由
       1.npm install vue-router@4
     7.store
       1.npm i vuex@next
@@ -55,15 +56,18 @@
   1.npm i element-plus
   2.按需加载
     1.npm i -D vite-plugin-style-import
-5.layout
+5.layout & 完善路由
   1.components/layout
+  2.routes 懒加载页面
+  3.main 过度动画
 6.基础功能
   1.权限管理
     1.utils getToken
     2.store user.ts token
     3.routes auths
     4.auth.ts
-    5.页面加载进度 nprogress
+    5.menu 配合权限显示
+  2.页面加载进度 nprogress
       npm i nprogress
       npm i -D @types/nprogress
 

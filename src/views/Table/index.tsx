@@ -1,4 +1,5 @@
 import { defineComponent } from "vue";
+import { ElTable, ElTableColumn } from "element-plus";
 export default defineComponent({
   name: "Table",
   props: {
@@ -30,11 +31,11 @@ export default defineComponent({
     ];
     return () => (
       <div>
-        <el-table data={tableData} style="width: 100%">
-          <el-table-column prop="date" label="日期" width="180"></el-table-column>
-          <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-          <el-table-column prop="address" label="地址"></el-table-column>
-        </el-table>
+        <ElTable data={tableData} style="width: 100%">
+          <ElTableColumn prop="date" label="日期" width="180"></ElTableColumn>
+          <ElTableColumn prop="name" label="姓名" width="180"></ElTableColumn>
+          <ElTableColumn prop="address" label="地址"></ElTableColumn>
+        </ElTable>
       </div>
     );
   },
