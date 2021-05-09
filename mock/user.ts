@@ -1,24 +1,25 @@
 import { MockMethod } from "vite-plugin-mock";
 export default [
   {
-    url: "/api/user/get-user-info-by-get",
-    method: "get",
+    url: "/api/user/login",
+    method: "post",
     response: () => {
       return {
         code: 200,
         data: {
-          username: "test get",
+          token: "tes-token",
+          id: 1,
         },
       };
     },
   },
   {
-    url: "/api/user/get-user-info-by-post",
+    url: "/api/user/info",
     method: "post",
     response: {
       code: 200,
       data: {
-        username: "test post",
+        username: "admin",
       },
     },
   },

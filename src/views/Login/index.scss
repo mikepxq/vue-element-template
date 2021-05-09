@@ -1,0 +1,26 @@
+.page_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d3a4b;
+  .m-form__wrap {
+    width: 500px;
+    .m-form {
+      .m-title {
+        text-align: center;
+      }
+      .m-form-item {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        .el-input__inner {
+          border-color: transparent;
+          background: transparent;
+        }
+      }
+    }
+    .m-button {
+      display: block;
+      width: 100%;
+    }
+  }
+}

@@ -16,6 +16,11 @@
       "@/*": ["src/*"]
     }
   },
-  "files": ["./src/typings/index.d.ts", "./src/shims-vue.d.ts", "./src/typings/vuex.d.ts"],
+  "files": [
+    "./src/typings/index.d.ts",
+    "./src/shims-vue.d.ts",
+    "./src/typings/vuex.d.ts",
+    "node_modules/element-plus/lib/index.d.ts"
+  ],
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

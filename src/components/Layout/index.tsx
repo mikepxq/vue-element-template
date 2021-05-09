@@ -20,7 +20,6 @@ export default defineComponent({
       <div class="page_layout">
         <Side class=" m-scroll m-side"></Side>
         {/* header 折叠按钮 面包屑 */}
-        {/* 首次直接加载效果 */}
         <Main />
       </div>
     );
