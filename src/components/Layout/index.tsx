@@ -3,7 +3,8 @@ import Side from "./Side";
 
 import "./index.scss";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
-import Main from "./Main.vue";
+import Header from "./Header";
+import Content from "./Content.vue";
 export default defineComponent({
   name: "Layout",
   props: {
@@ -11,16 +12,21 @@ export default defineComponent({
   },
   components: {},
   setup(props, cxt) {
+    //router
     const activePath = ref(useRoute().path);
     onBeforeRouteUpdate((to) => {
-      // console.log("[to.path]", to.path);
       activePath.value = to.path;
     });
+    //
+    const isOpenSide = ref(true);
     return () => (
       <div class="page_layout">
-        <Side class=" m-scroll m-side"></Side>
+        <Side class=" m-scroll m-side" isOpenSide={isOpenSide.value}></Side>
         {/* header 折叠按钮 面包屑 */}
-        <Main />
+        <div class="m-main">
+          <Header onChangeIcon={(isOpen) => (isOpenSide.value = isOpen)} isOpenSide={isOpenSide.value} />
+          <Content />
+        </div>
       </div>
     );
   },

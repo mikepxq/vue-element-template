@@ -1,5 +1,5 @@
 import { ConsoleRoute, getIsAuthWithUserAuthOnRoute } from "@/router";
-import { defineComponent, ref } from "vue";
+import { defineComponent, PropType, ref } from "vue";
 import { onBeforeRouteUpdate, RouteRecordRaw, useRoute } from "vue-router";
 import { useStore } from "vuex";
 import { ElMenuItem, ElSubmenu, ElMenu } from "element-plus";
@@ -7,7 +7,7 @@ import SideItem from "./SideItem";
 export default defineComponent({
   name: "App",
   props: {
-    // name: { tclype: String as PropType<string> },
+    isOpenSide: { type: Boolean as PropType<boolean> },
   },
   components: {},
   setup(props, cxt) {
@@ -66,15 +66,20 @@ export default defineComponent({
     };
     //
 
-    return () => (
-      <ElMenu
-        default-active={activePath.value} //避免警示
-        active-text-color="#ffd04b"
-        background-color="#545c64"
-        text-color="#fff"
-        class="m-menu__vertical m-scroll">
-        {ConsoleRoute.children && getSideMenuList(ConsoleRoute.children)}
-      </ElMenu>
-    );
+    return () => {
+      console.log("[props.isOpenSide ]", props.isOpenSide);
+
+      return (
+        <ElMenu
+          collapse={!props.isOpenSide}
+          default-active={activePath.value} //避免警示
+          active-text-color="#ffd04b"
+          background-color="#545c64"
+          text-color="#fff"
+          class="m-menu__vertical m-scroll">
+          {ConsoleRoute.children && getSideMenuList(ConsoleRoute.children)}
+        </ElMenu>
+      );
+    };
   },
 });

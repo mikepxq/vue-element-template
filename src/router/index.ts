@@ -11,6 +11,25 @@ export const ConsoleRoute: RouteRecordRaw = {
   },
   children: [
     {
+      path: "/console/role-manage",
+      component: () => import("@/views/role/manage.vue"),
+      meta: {
+        icon: "location",
+        title: "角色管理",
+        // auths: ["superAdmin0"], //test
+        //  hidden: true
+      },
+      // children: [
+      //   {
+      //     path: "/console/role-manage/create",
+      //     component: () => import("@/views/role/manage.vue"),
+      //     meta: {
+      //       title: "新增角色",
+      //     },
+      //   },
+      // ],
+    },
+    {
       path: "/console/dashboard",
       component: () => import("@/views/Dashboard/index"),
       meta: {

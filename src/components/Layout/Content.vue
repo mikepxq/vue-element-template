@@ -1,5 +1,5 @@
 <template>
-  <div class="m-main">
+  <div class="m-content">
     <router-view v-slot="{ Component, route }">
       <transition name="fade-transform" mode="out-in">
         <keep-alive>

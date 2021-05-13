@@ -1,11 +1,33 @@
-import { defineComponent } from "vue";
+import { defineComponent, PropType, reactive, ref } from "vue";
 export default defineComponent({
   name: "App",
   props: {
-    // name: { type: String as PropType<string> },
+    isOpenSide: { type: Boolean as PropType<boolean> },
+    onChangeIcon: {
+      type: Function,
+      default: () => {},
+    },
   },
   components: {},
   setup(props) {
-    return () => <h1>App</h1>;
+    //icon
+    const Icon = () => {
+      console.log("[props.isOpenSide h]", props.isOpenSide);
+      return (
+        <i
+          class={`m-icon ${props.isOpenSide ? "el-icon-s-unfold" : "el-icon-s-fold"}`}
+          onClick={() => {
+            props.onChangeIcon(!props.isOpenSide);
+          }}></i>
+      );
+    };
+    //
+    return () => (
+      <header class="m-header">
+        <nav class="m-nav__wrap">
+          <Icon></Icon>
+        </nav>
+      </header>
+    );
   },
 });

@@ -1,12 +1,29 @@
 .page_layout {
   display: flex;
-
+  .m-header {
+    padding: 5px 10px;
+    .m-nav__wrap {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      .m-icon {
+        font-size: 20px;
+        display: inline-block;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        // width: 40px;
+        // height: 40px;
+      }
+    }
+  }
   .m-side {
     height: 100%;
     overflow-y: auto;
     //外部 为展开
     &:not(.el-menu--collapse) {
-      min-width: 200px;
+      width: 200px;
     }
     .m-side-item {
       display: block;
