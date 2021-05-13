@@ -8,6 +8,7 @@ export const ConsoleRoute: RouteRecordRaw = {
   props: (route) => route,
   meta: {
     auths: ["superAdmin"],
+    title: "console",
   },
   children: [
     {

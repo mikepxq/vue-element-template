@@ -1,12 +1,12 @@
 <template>
   <div class="m-content">
-    <router-view v-slot="{ Component, route }">
-      <transition name="fade-transform" mode="out-in">
-        <keep-alive>
+    <RouterView v-slot="{ Component, route }">
+      <Transition name="fade" mode="out-in">
+        <KeepAlive>
           <component :is="Component" :key="route.path" />
-        </keep-alive>
-      </transition>
-    </router-view>
+        </KeepAlive>
+      </Transition>
+    </RouterView>
   </div>
 </template>
 <script lang="ts">

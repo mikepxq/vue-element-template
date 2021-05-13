@@ -1,48 +1,54 @@
 // global transition css
-
 /* fade */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.28s;
-}
 
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
+//enter-from
+//enter-active
+//enter-to
 
-/* fade-transform */
-.fade-transform-leave-active,
-.fade-transform-enter-active {
-  transition: all 0.5s;
-}
-
-.fade-transform-enter {
+//leave-from
+//leave-active
+//leave-to
+//进来的地方
+.fade-enter-from {
   opacity: 0;
   transform: translateX(-30px);
 }
-
-.fade-transform-leave-to {
+//离开 和 到的地方
+.fade-leave-from,
+.fade-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+//离开后
+.fade-leave-to {
   opacity: 0;
   transform: translateX(30px);
 }
-
-/* breadcrumb transition */
-.breadcrumb-enter-active,
-.breadcrumb-leave-active {
+//过程中
+.fade-leave-active,
+.fade-enter-active {
   transition: all 0.5s;
 }
 
-.breadcrumb-enter,
-.breadcrumb-leave-active {
+/* breadcrumb transition */
+//进来的地方
+.breadcrumb-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+//离开 和 到的地方
+.breadcrumb-leave-from,
+.breadcrumb-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+//离开后
+.breadcrumb-leave-to {
   opacity: 0;
   transform: translateX(20px);
 }
-
-.breadcrumb-move {
+//过程中
+.breadcrumb-leave-active,
+.breadcrumb-enter-active {
   transition: all 0.5s;
-}
-
-.breadcrumb-leave-active {
-  position: absolute;
 }

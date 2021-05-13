@@ -1,4 +1,5 @@
 import { defineComponent, PropType, reactive, ref } from "vue";
+import BreadCrumb from "./BreadCrumb.vue";
 export default defineComponent({
   name: "App",
   props: {
@@ -26,6 +27,7 @@ export default defineComponent({
       <header class="m-header">
         <nav class="m-nav__wrap">
           <Icon></Icon>
+          <BreadCrumb />
         </nav>
       </header>
     );

@@ -16,11 +16,15 @@
         // width: 40px;
         // height: 40px;
       }
+      .b-bread-crumb {
+        margin-left: 10px;
+      }
     }
   }
   .m-side {
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     //外部 为展开
     &:not(.el-menu--collapse) {
       width: 200px;
@@ -33,6 +37,7 @@
   }
   .m-main {
     flex-grow: 2;
+    overflow-x: hidden;
     > * {
       border: 1px solid #ddd;
     }
