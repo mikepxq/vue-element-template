@@ -9,20 +9,23 @@
     1. ./node_modules/.bin/eslint --init
       "lint:fix": "eslint --fix --ext  .ts,tsx,js,d.ts src"
       // run `npm audit fix` to fix them, or `npm audit` for details
-    // 2.npm i -D @typescript-eslint/parser@3(v4有兼容问题 https://github.com/vuejs/vue-eslint-parser/issues/99)
-    //   npm uninstall  @typescript-eslint/parser
+    2.eslintrc.js  "@vue/typescript/recommended"
+    // npx install-peerdeps --dev @vue/eslint-config-typescript
+    npm i -D @vue/eslint-config-typescript
   2.npm i -D  prettier
     npm i -D eslint-plugin-prettier  使用eslint使用prettier
     npm i -D eslint-config-prettier
   3.git 格式化 提交校验
-    npm i -D husky@=4
-    npm i -D lint-staged
+    npm i -D husky
+    npx mrm@2 lint-staged
+    // npm i -D lint-staged
     package.json 配置
   4.commitlint
     npm i -D @commitlint/config-conventional @commitlint/cli
-    package.json
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"    提交前检查 commit 标题
+    // package.json
+    //   "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"    提交前检查 commit 标题
     commitlint.config.js
+    npx husky add .husky/commit-msg 'commitlint -E HUSKY_GIT_PARAMS'
   5.别名
     vite.config.ts
   6.scss
