@@ -1,13 +1,13 @@
 import { defineComponent, reactive, ref } from "vue";
 import { ElForm, ElFormItem, ElInput, ElButton } from "element-plus";
 import { pattern } from "@/settings";
-
+const s = 0;
 export default defineComponent({
   name: "RoleManage",
+  components: {},
   props: {
     // name: { type: String as PropType<string> },
   },
-  components: {},
   setup() {
     const form = reactive({
       roleName: "",
