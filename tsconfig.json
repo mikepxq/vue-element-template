@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true, //跳过三方检查
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",

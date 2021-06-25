@@ -13,7 +13,7 @@ export const ConsoleRoute: RouteRecordRaw = {
   children: [
     {
       path: "/console/role-manage",
-      component: () => import("@/views/role/manage.vue"),
+      component: () => import("@/views/Role/Manage"),
       meta: {
         icon: "location",
         title: "角色管理",

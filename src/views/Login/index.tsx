@@ -1,27 +1,43 @@
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent, reactive, ref, withKeys } from "vue";
 import { ElForm, ElFormItem, ElInput, ElButton } from "element-plus";
 import "./index.scss";
 import ElIcon from "@/components/ElIcon";
 import { useStore } from "vuex";
-import { ReqDataLogin, ResDataLogin } from "@/store/user";
 import router from "@/router";
 export default defineComponent({
   name: "Login",
   props: {
     // name: { type: String as PropType<string> },
   },
-  components: {},
-  setup(props) {
+  components: {
+    ElForm,
+    ElFormItem,
+    ElInput,
+    ElButton,
+  },
+  setup() {
     const store = useStore();
     const refForm = ref();
     const form = reactive({
       username: "admin",
       password: "11111",
     });
+    const onSubmit = async () => {
+      const isOk = await refForm.value.validate().catch(() => {});
+      if (!isOk) return;
+      const res = await (store.dispatch as DispatchFn<ReqDataLogin, ResDataLogin>)("user/fetchLogin");
+      if (!res || res.code != 200) return;
+      router.push("/");
+    };
     return () => (
       <div class="page_login">
         <div class="m-form__wrap">
-          <ElForm labelWidth="50px" class="m-form" model={form} ref={refForm}>
+          <el-form
+            labelWidth="50px"
+            class="m-form"
+            model={form}
+            ref={refForm}
+            onKeydown={withKeys(onSubmit, ["enter"])}>
             <h1 class="m-title">系统登录</h1>
             <ElFormItem
               v-slots={{
@@ -55,19 +71,10 @@ export default defineComponent({
               }>
               <ElInput v-model={[form.password]} type="password" autocomplete="off" show-password></ElInput>
             </ElFormItem>
-            <ElButton
-              class="m-button"
-              type="primary"
-              onClick={async (e) => {
-                const isOk = await refForm.value.validate().catch(() => {});
-                if (!isOk) return;
-                const res = await (store.dispatch as DispatchFn<ReqDataLogin, ResDataLogin>)("user/fetchLogin");
-                if (!res || res.code != 200) return;
-                router.push("/");
-              }}>
+            <el-button class="m-button" type="primary" onClick={onSubmit}>
               登录
-            </ElButton>
-          </ElForm>
+            </el-button>
+          </el-form>
         </div>
       </div>
     );

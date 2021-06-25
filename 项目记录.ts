@@ -8,9 +8,9 @@
   1.npm i -D eslint
     1. ./node_modules/.bin/eslint --init
       "lint:fix": "eslint --fix --ext  .ts,tsx,js,d.ts src"
-    2.npm install -D vue-eslint-parser
-    3.npm i -D @typescript-eslint/parser@3(v4有兼容问题 https://github.com/vuejs/vue-eslint-parser/issues/99)
-      npm uninstall  @typescript-eslint/parser
+      // run `npm audit fix` to fix them, or `npm audit` for details
+    // 2.npm i -D @typescript-eslint/parser@3(v4有兼容问题 https://github.com/vuejs/vue-eslint-parser/issues/99)
+    //   npm uninstall  @typescript-eslint/parser
   2.npm i -D  prettier
     npm i -D eslint-plugin-prettier  使用eslint使用prettier
     npm i -D eslint-config-prettier
