@@ -32,7 +32,7 @@ export const ConsoleRoute: RouteRecordRaw = {
     },
     {
       path: "/console/dashboard",
-      component: () => import("@/views/Dashboard/index"),
+      component: () => import("@/views/Dashboard/index.vue"),
       meta: {
         icon: "location",
         title: "Dashboard",
@@ -108,7 +108,7 @@ const routes = [
   ConsoleRoute,
   {
     path: "/login",
-    component: () => import("@/views/Login"),
+    component: () => import("@/views/Login/index.vue"),
   },
   {
     path: "/404",

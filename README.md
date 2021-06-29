@@ -62,6 +62,12 @@ npm run lint:fix
   1.通用类，准守 EBM 规范
   2.与业务相关的类，以下划线为间隔（业务_业务_业务_）。可以理解为命名空间。
 ```
+## jsx
+> 遇到的兼容性问题
+```
+1.typescript 语法下 eslint parser 配置为 vue-eslint-parser 时,未使用变量没提示错误。
+2.vue 原生组件 Transition 配合 Component  无效
+```
 ## Browsers support
 
 Modern browsers 

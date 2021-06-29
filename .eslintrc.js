@@ -30,5 +30,6 @@ module.exports = {
     "@typescript-eslint/no-empty-function": "off", //空函数
     "@typescript-eslint/ban-types": "warn", //直接用 {} 定义类型
     "@typescript-eslint/no-explicit-any": "off", //可以定义any类型
+    "vue/no-unused-components": "warn", //没用的组件
   },
 };
