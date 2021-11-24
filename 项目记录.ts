@@ -1,6 +1,6 @@
 /**
 1.基础构建
-  1.npm init @vitejs/app my-vue-app --template vue-ts
+  1.npm init vite@latest my-vue-app -- --template vue-ts
   2.进入项目
     npm install
   3.README.md

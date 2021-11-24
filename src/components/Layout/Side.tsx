@@ -2,7 +2,8 @@ import { ConsoleRoute, getIsAuthWithUserAuthOnRoute } from "@/router";
 import { defineComponent, PropType, ref } from "vue";
 import { onBeforeRouteUpdate, RouteRecordRaw, useRoute } from "vue-router";
 import { useStore } from "vuex";
-import { ElMenuItem, ElSubmenu, ElMenu } from "element-plus";
+import { ElMenuItem, ElMenu } from "element-plus";
+const { SubMenu } = ElMenu;
 import SideItem from "./SideItem";
 export default defineComponent({
   name: "App",
@@ -35,7 +36,7 @@ export default defineComponent({
         //没有权限 或者 隐藏
         if (isHasChildren) {
           return (
-            <ElSubmenu
+            <SubMenu
               index={route.path}
               v-slots={{
                 title: () => (
@@ -49,7 +50,7 @@ export default defineComponent({
                 ),
               }}>
               {route.children && getSideMenuList(route.children)}
-            </ElSubmenu>
+            </SubMenu>
           );
         } else {
           return (

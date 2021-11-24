@@ -27,7 +27,7 @@ import "./index.scss";
 import ElIcon from "@/components/ElIcon";
 import { useStore } from "vuex";
 import router from "@/router";
-import { defineComponent } from "vue";
+
 // interface Props {}
 export default defineComponent({
   name: "Login",
