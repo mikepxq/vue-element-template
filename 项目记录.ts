@@ -59,6 +59,7 @@
   1.npm i element-plus
   2.按需加载
     1.npm i -D vite-plugin-style-import
+  3.npm i @element-plus/icons
 5.layout & 完善路由
   1.components/layout
   2.routes 懒加载页面
