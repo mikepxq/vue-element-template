@@ -3,14 +3,14 @@ import Side from "./Side";
 
 import "./index.scss";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
-import Header from "./Header";
+import Header from "./Header.vue";
 import Content from "./Content.vue";
 export default defineComponent({
   name: "Layout",
+  components: {},
   props: {
     // name: { type: String as PropType<string> },
   },
-  components: {},
   setup(props, cxt) {
     //router
     const activePath = ref(useRoute().path);
@@ -18,13 +18,16 @@ export default defineComponent({
       activePath.value = to.path;
     });
     //
-    const isOpenSide = ref(true);
+    const isCollapseSide = ref(false);
     return () => (
       <div class="page_layout">
-        <Side class=" m-scroll m-side" isOpenSide={isOpenSide.value}></Side>
+        <Side class=" m-scroll m-side" isCollapseSide={isCollapseSide.value}></Side>
         {/* header 折叠按钮 面包屑 */}
         <div class="m-main">
-          <Header onChangeIcon={(isOpen) => (isOpenSide.value = isOpen)} isOpenSide={isOpenSide.value} />
+          <Header
+            onChange={(isOpen) => (isCollapseSide.value = Boolean(isOpen))}
+            isCollapseSide={isCollapseSide.value}
+          />
           <Content />
         </div>
       </div>

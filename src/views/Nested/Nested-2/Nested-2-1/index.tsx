@@ -1,10 +1,10 @@
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "Nested-2-1",
+  name: "Nested21",
+  components: {},
   props: {
     // name: { type: String as PropType<string> },
   },
-  components: {},
   setup(props) {
     return () => (
       <div>

@@ -1,8 +1,9 @@
 import { defineComponent, PropType } from "vue";
+import { ElIcon } from "element-plus";
 export default defineComponent({
   name: "SideItem",
   props: {
-    iconName: { type: String as PropType<string> },
+    iconNode: { type: Object as PropType<ElementPlus.IconProps> },
     title: { type: String as PropType<string> },
     href: { type: String as PropType<string> },
     class: { type: String as PropType<string> },
@@ -12,7 +13,8 @@ export default defineComponent({
     return () => (
       <>
         <router-link to={props.href} class={`${props.class}`}>
-          <i class={`el-icon-${props.iconName}`}></i>
+          {props.iconNode && <ElIcon>{<props.iconNode />}</ElIcon>}
+
           <span>{props.title}</span>
         </router-link>
       </>

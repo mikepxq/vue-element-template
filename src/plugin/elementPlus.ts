@@ -64,7 +64,7 @@ import {
   // ElSlider,
   // ElStep,
   // ElSteps,
-  ElSubmenu,
+
   // ElSwitch,
   // ElTabPane,
   ElTable,
@@ -150,7 +150,7 @@ const components = [
   // ElSlider,
   // ElStep,
   // ElSteps,
-  ElSubmenu,
+
   // ElSwitch,
   // ElTabPane,
   ElTable,

@@ -6,14 +6,14 @@ import { useStore } from "vuex";
 import router from "@/router";
 export default defineComponent({
   name: "Login",
-  props: {
-    // name: { type: String as PropType<string> },
-  },
   components: {
     ElForm,
     ElFormItem,
     ElInput,
     ElButton,
+  },
+  props: {
+    // name: { type: String as PropType<string> },
   },
   setup() {
     const store = useStore();

@@ -2,10 +2,10 @@ import { defineComponent } from "vue";
 import { ElTable, ElTableColumn } from "element-plus";
 export default defineComponent({
   name: "Table",
+  components: {},
   props: {
     // name: { type: String as PropType<string> },
   },
-  components: {},
   setup(props) {
     const tableData = [
       {
@@ -31,7 +31,7 @@ export default defineComponent({
     ];
     return () => (
       <div>
-        <ElTable data={tableData} style="width: 100%">
+        <ElTable data={tableData}>
           <ElTableColumn prop="date" label="日期" width="180"></ElTableColumn>
           <ElTableColumn prop="name" label="姓名" width="180"></ElTableColumn>
           <ElTableColumn prop="address" label="地址"></ElTableColumn>

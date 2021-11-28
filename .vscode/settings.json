@@ -19,5 +19,6 @@
     "statusBarItem.remoteForeground": "#15202b"
   },
   "peacock.color": "#42b883",
-  "cSpell.words": ["vuex", "vite", "submenu", "deving", "auths", "nprogress", "mockjs", "vitejs"]
+  "cSpell.words": ["vuex", "vite", "submenu", "deving", "auths", "nprogress", "mockjs", "vitejs"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

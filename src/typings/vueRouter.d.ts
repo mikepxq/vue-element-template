@@ -3,7 +3,7 @@ import "vue-router";
 
 declare module "vue-router" {
   interface RouteMeta {
-    icon?: string;
+    icon?: ElementPlus.IconProps;
     title?: string;
     auths?: string[];
     hidden?: boolean;

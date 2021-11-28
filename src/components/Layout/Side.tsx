@@ -8,7 +8,7 @@ import SideItem from "./SideItem";
 export default defineComponent({
   name: "App",
   props: {
-    isOpenSide: { type: Boolean as PropType<boolean> },
+    isCollapseSide: { type: Boolean as PropType<boolean> },
   },
   components: {},
   setup(props, cxt) {
@@ -43,7 +43,7 @@ export default defineComponent({
                   <>
                     <SideItem
                       class="m-side-item"
-                      iconName={route.meta && route.meta.icon}
+                      iconNode={route.meta && route.meta.icon}
                       title={route.meta && route.meta.title}
                       href={route.path}></SideItem>
                   </>
@@ -57,7 +57,7 @@ export default defineComponent({
             <ElMenuItem index={route.path}>
               <SideItem
                 class="m-side-item"
-                iconName={route.meta && route.meta.icon}
+                iconNode={route.meta && route.meta.icon}
                 title={route.meta && route.meta.title}
                 href={route.path}></SideItem>
             </ElMenuItem>
@@ -68,11 +68,9 @@ export default defineComponent({
     //
 
     return () => {
-      console.log("[props.isOpenSide ]", props.isOpenSide);
-
       return (
         <ElMenu
-          collapse={!props.isOpenSide}
+          collapse={props.isCollapseSide}
           default-active={activePath.value} //避免警示
           active-text-color="#ffd04b"
           background-color="#545c64"

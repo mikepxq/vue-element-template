@@ -34,8 +34,9 @@
           cursor: pointer;
           display: flex;
           align-items: center;
-          // width: 40px;
-          // height: 40px;
+          &.collapse {
+            transform: rotate(180deg);
+          }
         }
         .b-bread-crumb {
           margin-left: 10px;

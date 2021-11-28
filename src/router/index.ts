@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteLocationNormalized, RouteRecordRaw } from "vue-router";
 import Home from "@/views/Home";
+import { AddLocation } from "@element-plus/icons";
 export const ConsoleRoute: RouteRecordRaw = {
   path: "/console",
   name: "Console",
@@ -15,7 +16,7 @@ export const ConsoleRoute: RouteRecordRaw = {
       path: "/console/role-manage",
       component: () => import("@/views/Role/Manage"),
       meta: {
-        icon: "location",
+        icon: AddLocation,
         title: "角色管理",
         // auths: ["superAdmin0"], //test
         //  hidden: true
@@ -34,7 +35,7 @@ export const ConsoleRoute: RouteRecordRaw = {
       path: "/console/dashboard",
       component: () => import("@/views/Dashboard/index.vue"),
       meta: {
-        icon: "location",
+        icon: AddLocation,
         title: "Dashboard",
         // auths: ["superAdmin0"], //test
         //  hidden: true
@@ -43,25 +44,25 @@ export const ConsoleRoute: RouteRecordRaw = {
     {
       path: "/console/table",
       component: () => import("@/views/Table/index"),
-      meta: { icon: "location", title: "Table" },
+      meta: { icon: AddLocation, title: "Table" },
     },
     {
       path: "/console/form",
       component: () => import("@/views/Form/index"),
-      meta: { icon: "location", title: "Form" },
+      meta: { icon: AddLocation, title: "Form" },
     },
     {
       path: "/console/nested",
       // name: "Console",
       component: () => import("@/views/Nested/index"),
-      meta: { icon: "location", title: "Nested" },
+      meta: { icon: AddLocation, title: "Nested" },
       children: [
         {
           path: "/console/nested/nested-1",
           // name: "Console",
           component: () => import("@/views/Nested/Nested-1/index"),
           meta: {
-            icon: "location",
+            icon: AddLocation,
             title: "Nested-1",
             //  hidden: true
             // auths: ["superAdmin0"], //test
@@ -72,7 +73,7 @@ export const ConsoleRoute: RouteRecordRaw = {
           // name: "Console",
           component: () => import("@/views/Nested/Nested-2/index"),
           meta: {
-            icon: "location",
+            icon: AddLocation,
             title: "Nested-2",
             // hidden: true
             // auths: ["superAdmin0"], //test
@@ -82,13 +83,13 @@ export const ConsoleRoute: RouteRecordRaw = {
               path: "/console/nested/nested-2/nested-2-1",
               // name: "Console78",
               component: () => import("@/views/Nested/Nested-2/Nested-2-1/index"),
-              meta: { icon: "location", title: "Nested-2-1" },
+              meta: { icon: AddLocation, title: "Nested-2-1" },
             },
             {
               path: "/console/nested/nested-2/nested-2-2",
               // name: "Console/2",
               component: () => import("@/views/Nested/Nested-2/Nested-2-2/index"),
-              meta: { icon: "location", title: "Nested-2-2" },
+              meta: { icon: AddLocation, title: "Nested-2-2" },
             },
           ],
         },
