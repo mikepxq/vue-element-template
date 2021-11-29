@@ -5,6 +5,7 @@ import store from "@/store/index";
 import "./styles/index.scss";
 import "element-plus/theme-chalk/src/index.scss";
 import "./auth";
+// console.log("[]", import.meta.env.VITE_IS_MOCK);
 const app = createApp(App);
 app.use(router).use(store);
 app.mount("#app");
