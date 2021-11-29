@@ -10,7 +10,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "element-plus/global"],
+    "types": ["vite/client"],
     "baseUrl": ".",
     "noImplicitAny": false, //可以隐式any
     "paths": {
@@ -22,7 +22,8 @@
     "./src/shims-vue.d.ts",
     "./src/typings/vuex.d.ts",
     "node_modules/element-plus/lib/index.d.ts",
-    "src/typings/elementPlus.d.ts"
+    "src/typings/elementPlus.d.ts",
+    "src/model/index.d.ts"
   ],
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src", "mock"]
 }

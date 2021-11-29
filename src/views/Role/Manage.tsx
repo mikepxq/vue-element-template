@@ -1,6 +1,7 @@
 import { defineComponent, reactive, ref } from "vue";
 import { ElForm, ElFormItem, ElInput, ElButton } from "element-plus";
-import { pattern } from "@/settings";
+import { patternMap } from "@/model";
+
 const s = 0;
 export default defineComponent({
   name: "RoleManage",
@@ -23,7 +24,7 @@ export default defineComponent({
             prop="roleName"
             rules={[
               {
-                validator: () => pattern.zh_alpha_num__.test(form.roleName),
+                validator: () => patternMap.zh_alpha_num__.test(form.roleName),
                 message: "请输入中文，英文字母和数字及下划线",
               },
             ]}>

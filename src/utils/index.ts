@@ -1,4 +1,4 @@
-import { AppTokenKey } from "@/settings";
+import { AppTokenKey } from "@/model";
 /** */
 export const getToken = (): string => (localStorage[AppTokenKey] ? localStorage[AppTokenKey] : "");
 /** */

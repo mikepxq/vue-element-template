@@ -1,10 +1,16 @@
-/**正则模式 */
-export const pattern = {
+/**全局正则 */
+export const patternMap = {
+  /** mock接口 */
+  mockApi: /^\/mock/,
+  /** 单字节中文 字母 数字 下划线  多用于名称*/
+  alpha_number_: /^[\u4e00-\u9fa5a-zA-Z0-9_]$/,
+  appVersion: /^(\d+\.)+\d+$/,
   //匹配中文，英文字母和数字及下划线
   zh_alpha_num__: /^[\u4e00-\u9fa5_a-zA-Z0-9]+$/,
   //匹配中文
   zh: /^[\u4e00-\u9fa5]+$/,
 };
+/**正则模式 */
 
 /**
  * 
