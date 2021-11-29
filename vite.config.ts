@@ -41,6 +41,9 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
+    server: {
+      port: 3001, //固定,暂为bug //https://github.com/vitejs/vite/issues/3391
+    },
   });
 };
 
