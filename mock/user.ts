@@ -1,4 +1,3 @@
-import { MockMethod } from "vite-plugin-mock";
 import { getRoleInfo } from "./roles";
 import { resFn } from "./utils";
 let index = 2;
@@ -14,7 +13,7 @@ let list: MockUserItem[] = [
 export const getUserInfo = (req: any) => {
   const reqBody: ReqDataUserInfo = JSON.parse(req.body);
   const _userInfo = list.filter((item) => item.id == Number(reqBody.id))[0];
-  if (!_userInfo) return resFn(401, undefined, "没有数据");
+  if (!_userInfo) return resFn(undefined, 401, "没有数据");
   const _roleInfo = getRoleInfo(_userInfo.roleId);
   const _body: ResDataLogin = {
     ..._userInfo,
@@ -26,7 +25,7 @@ export const getUserInfo = (req: any) => {
 export const reqLogin = (req: any) => {
   const reqBody: ReqDataLogin = req.body;
   const _userInfo = list.filter((item) => item.username == reqBody.username)[0];
-  if (!_userInfo) return resFn(401, undefined, "没有数据");
+  if (!_userInfo) return resFn(undefined, 401, "没有数据");
   const _roleInfo = getRoleInfo(_userInfo.roleId);
   const _body: ResDataLogin = {
     ..._userInfo,
@@ -66,17 +65,3 @@ export const getList = () => {
   const _list = list.filter((item) => item.isShow !== false);
   return resFn<ResDataUserList>({ list: _list, total: _list.length });
 };
-
-export default [
-  { url: "/api/user/login", method: "post", response: reqLogin },
-  {
-    url: "/api/user/info",
-    method: "post",
-    response: {
-      code: 200,
-      data: {
-        username: "admin",
-      },
-    },
-  },
-] as MockMethod[];

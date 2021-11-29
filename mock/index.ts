@@ -1,30 +1,27 @@
-import userList from "./user";
-
+import { MockMethod } from "vite-plugin-mock";
 // import Mock from "mockjs";
-// import * as user from "./user";
-// import * as Roles from "./roles";
-// import * as Article from "./article";
-// /**
-//  * 仅仅为了容易处理接受值，使用post方式，生产中以实际情况为准
-//  */
+import * as user from "./user";
+import * as Roles from "./roles";
+import * as Article from "./article";
 
-// Mock.mock("/mock/api/user/info", "post", user.getUserInfo);
-// Mock.mock("/mock/api/user/login", "post", user.reqLogin);
-// Mock.mock("/mock/api/user/create", "post", user.create);
-// Mock.mock("/mock/api/user/update", "post", user.update);
-// Mock.mock("/mock/api/user/list", "post", user.getList);
-// //
-// Mock.mock("/mock/api/role/list", "post", Roles.getList);
-// Mock.mock("/mock/api/role/create", "post", Roles.roleCreate);
-// Mock.mock("/mock/api/role/update", "post", Roles.update);
-// Mock.mock("/mock/api/role/option-list", "get", Roles.getOptionList);
-
-// Mock.mock("/mock/api/article/create", "post", Article.create);
-// Mock.mock("/mock/api/article/update", "post", Article.update);
-// Mock.mock("/mock/api/article/list", "post", Article.getList);
-// Mock.mock("/mock/api/article/info", "post", Article.info);
-
-export default [...userList];
+export default [
+  //user
+  { url: "mock/api/user/login", method: "post", response: user.reqLogin },
+  { url: "/mock/api/user/login", method: "post", response: user.reqLogin },
+  { url: "/mock/api/user/create", method: "post", response: user.create },
+  { url: "/mock/api/user/update", method: "post", response: user.update },
+  { url: "/mock/api/user/list", method: "post", response: user.getList },
+  //role
+  { url: "/mock/api/role/list", method: "post", response: Roles.getList },
+  { url: "/mock/api/role/create", method: "post", response: Roles.roleCreate },
+  { url: "/mock/api/role/update", method: "post", response: Roles.update },
+  { url: "/mock/api/role/option-list", method: "get", response: Roles.getOptionList },
+  //article
+  { url: "/mock/api/article/create", method: "post", response: Article.create },
+  { url: "/mock/api/article/update", method: "post", response: Article.update },
+  { url: "/mock/api/article/list", method: "post", response: Article.getList },
+  { url: "/mock/api/article/info", method: "post", response: Article.info },
+] as MockMethod[];
 /**参照
  * https://github.com/anncwb/vite-plugin-mock/blob/HEAD/README.zh_CN.md
  */
