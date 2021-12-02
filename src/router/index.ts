@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory, RouteLocationNormalized, RouteRecordRaw } from "vue-router";
-import Home from "@/views/Home";
+import Home from "@/views/Home/index.vue";
 import { AddLocation } from "@element-plus/icons";
 export const ConsoleRoute: RouteRecordRaw = {
   path: "/console",
@@ -48,7 +48,7 @@ export const ConsoleRoute: RouteRecordRaw = {
     },
     {
       path: "/console/form",
-      component: () => import("@/views/Form/index"),
+      component: () => import("@/views/Form/index.vue"),
       meta: { icon: AddLocation, title: "Form" },
     },
     {
@@ -60,7 +60,7 @@ export const ConsoleRoute: RouteRecordRaw = {
         {
           path: "/console/nested/nested-1",
           // name: "Console",
-          component: () => import("@/views/Nested/Nested-1/index"),
+          component: () => import("@/views/Nested/Nested-1/index.vue"),
           meta: {
             icon: AddLocation,
             title: "Nested-1",
@@ -71,7 +71,7 @@ export const ConsoleRoute: RouteRecordRaw = {
         {
           path: "/console/nested/nested-2",
           // name: "Console",
-          component: () => import("@/views/Nested/Nested-2/index"),
+          component: () => import("@/views/Nested/Nested-2/index.vue"),
           meta: {
             icon: AddLocation,
             title: "Nested-2",
@@ -82,13 +82,13 @@ export const ConsoleRoute: RouteRecordRaw = {
             {
               path: "/console/nested/nested-2/nested-2-1",
               // name: "Console78",
-              component: () => import("@/views/Nested/Nested-2/Nested-2-1/index"),
+              component: () => import("@/views/Nested/Nested-2/Nested-2-1/index.vue"),
               meta: { icon: AddLocation, title: "Nested-2-1" },
             },
             {
               path: "/console/nested/nested-2/nested-2-2",
               // name: "Console/2",
-              component: () => import("@/views/Nested/Nested-2/Nested-2-2/index"),
+              component: () => import("@/views/Nested/Nested-2/Nested-2-2/index.vue"),
               meta: { icon: AddLocation, title: "Nested-2-2" },
             },
           ],
