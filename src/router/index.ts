@@ -14,7 +14,7 @@ export const ConsoleRoute: RouteRecordRaw = {
   children: [
     {
       path: "/console/role-manage",
-      component: () => import("@/views/Role/Manage"),
+      component: () => import("@/views/Role/Manage.vue"),
       meta: {
         icon: AddLocation,
         title: "角色管理",
@@ -43,7 +43,7 @@ export const ConsoleRoute: RouteRecordRaw = {
     },
     {
       path: "/console/table",
-      component: () => import("@/views/Table/index"),
+      component: () => import("@/views/Table/index.vue"),
       meta: { icon: AddLocation, title: "Table" },
     },
     {
@@ -54,7 +54,7 @@ export const ConsoleRoute: RouteRecordRaw = {
     {
       path: "/console/nested",
       // name: "Console",
-      component: () => import("@/views/Nested/index"),
+      component: () => import("@/views/Nested/index.vue"),
       meta: { icon: AddLocation, title: "Nested" },
       children: [
         {
@@ -113,7 +113,7 @@ const routes = [
   },
   {
     path: "/404",
-    component: () => import("@/views/404"),
+    component: () => import("@/views/404.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
