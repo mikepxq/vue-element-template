@@ -1,6 +1,6 @@
 import { ConsoleRoute, getIsAuthWithUserAuthOnRoute } from "@/router";
 import { defineComponent, PropType, ref } from "vue";
-import { onBeforeRouteUpdate, RouteRecordRaw, useRoute } from "vue-router";
+import { onBeforeRouteUpdate, RouteRecordRaw, useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { ElMenuItem, ElMenu } from "element-plus";
 const { SubMenu } = ElMenu;
@@ -12,6 +12,7 @@ export default defineComponent({
   },
   components: {},
   setup(props, cxt) {
+    const router = useRouter();
     const activePath = ref(useRoute().path);
     onBeforeRouteUpdate((to) => {
       // console.log("[to.path]", to.path);
@@ -40,13 +41,10 @@ export default defineComponent({
               index={route.path}
               v-slots={{
                 title: () => (
-                  <>
-                    <SideItem
-                      class="m-side-item"
-                      iconNode={route.meta && route.meta.icon}
-                      title={route.meta && route.meta.title}
-                      href={route.path}></SideItem>
-                  </>
+                  <SideItem
+                    class="m-side-item"
+                    iconNode={route.meta && route.meta.icon}
+                    title={route.meta && route.meta.title}></SideItem>
                 ),
               }}>
               {route.children && getSideMenuList(route.children)}
@@ -54,12 +52,15 @@ export default defineComponent({
           );
         } else {
           return (
-            <ElMenuItem index={route.path}>
+            <ElMenuItem
+              index={route.path}
+              onClick={() => {
+                router.push(route.path);
+              }}>
               <SideItem
                 class="m-side-item"
                 iconNode={route.meta && route.meta.icon}
-                title={route.meta && route.meta.title}
-                href={route.path}></SideItem>
+                title={route.meta && route.meta.title}></SideItem>
             </ElMenuItem>
           );
         }
